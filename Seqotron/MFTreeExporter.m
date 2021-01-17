@@ -66,16 +66,20 @@ NSString *MFTreeExporterShowBootstrapNodeNameKey = @"tk.phylogenetics.seqotron.e
     [super dealloc];
 }
 
--(void)writeToFile:(NSString*)path error:(NSError**)error{
+-(BOOL)writeToFile:(NSString*)path error:(NSError**)error{
     if (error) {
         *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:nil];
+        return false;
     }
+    return true;
 }
 
--(void)writeToURL:(NSURL*)url error:(NSError**)error{
+-(BOOL)writeToURL:(NSURL*)url error:(NSError**)error{
     if (error) {
         *error = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:nil];
+        return false;
     }
+    return true;
 }
 
 -(NSString*)string{

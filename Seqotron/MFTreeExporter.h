@@ -41,9 +41,9 @@ extern NSString *MFTreeExporterShowBootstrapNodeNameKey; // default: NO
 
 -(id)initWithTree:(MFTree*)tree;
 
--(void)writeToFile:(NSString*)path error:(NSError**)error;
+-(BOOL)writeToFile:(NSString*)path error:(NSError**)error;
 
--(void)writeToURL:(NSURL*)url error:(NSError**)error;
+-(BOOL)writeToURL:(NSURL*)url error:(NSError**)error;
 
 -(NSString*)string;
 

@@ -850,7 +850,7 @@ NSString *MFTranslationDidChangeNotification = @"MFTranslationDidChange";
 - (void)mouseMoved:(NSEvent *)theEvent {
     NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     
-    if( point.x < [[self superview]bounds].origin.x || point.y < [[self superview]bounds].origin.y ) [self mouseExited:nil];
+    if( point.x < [[self superview]bounds].origin.x || point.y < [[self superview]bounds].origin.y ) [self mouseExited:theEvent];
     
     NSInteger indexSequence = (NSInteger)(point.y/(_residueHeight+_rowSpacing));
     NSInteger indexSite     = (NSInteger)(point.x/_residueWidth);
